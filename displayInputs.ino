@@ -140,12 +140,13 @@ void setup() {
   delay(1500);
   resetInputs();
   resetDisplay();
+
+  // Generation d'un nombre aleatoire en lisant une broche inutilisee
+  randomSeed(analogRead(14));
 }
 
 void loop() {
   // Inputs aleatoires (pour le fun)
-  // Generation d'un nombre aleatoire en lisant une broche inutilisee
-  randomSeed(analogRead(13));
   // Enregistrement d'inputs aléatoires
   registerInput(STICK,(int) random(1,10));
   registerInput(REDB,(int) random(2));
