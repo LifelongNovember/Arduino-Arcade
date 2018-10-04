@@ -51,7 +51,23 @@ void setup() {
   // Initialisation d'inputPressed
   resetInputs();
   // Initialisation de l'affichage (dessin du setup sans aucun input entre)
-  resetDisplay();
+  tft.setRotation(LANDSCAPE);
+  tft.fillScreen(WHITE);
+
+  drawDL();
+  drawD();
+  drawDR();
+  drawL();
+  drawR();
+  drawUL();
+  drawU();
+  drawUR();
+
+  drawRB();
+  drawGB();
+  drawBB();
+
+  drawNeutral();
 
   // Test de chacune des positions du stick et des boutons
   registerInput(STICK,UP);
@@ -295,9 +311,38 @@ void fillNeutral() {
 
 // Initialisation de l'afficheur et affichage du setup
 void resetDisplay() {
-  tft.setRotation(LANDSCAPE);
-  tft.fillScreen(WHITE);
-  
+
+  // On ecrase les formes existantes plutot que de remplir l'ecran de blanc
+  // pour un meilleur refresh rate
+  tft.fillTriangle(64,151,71,158,53,176,WHITE);
+  tft.fillTriangle(53,176,46,169,64,151,WHITE);
+  tft.fillTriangle(39,162,60,183,39,183,WHITE);
+  tft.fillRect(79,166,11,26,WHITE);
+  tft.fillTriangle(69,191,84,191,84,206,WHITE);
+  tft.fillTriangle(85,191,85,206,100,191,WHITE);
+  tft.fillTriangle(96,159,103,152,114,177,WHITE);
+  tft.fillTriangle(103,152,114,177,121,170,WHITE);
+  tft.fillTriangle(128,163,128,184,107,184,WHITE);
+  tft.fillRect(32,134,26,11,WHITE);
+  tft.fillTriangle(32,155,32,140,17,140,WHITE);
+  tft.fillTriangle(17,139,32,139,32,124,WHITE);
+  tft.fillRect(110,135,26,11,WHITE);
+  tft.fillTriangle(135,155,150,140,135,140,WHITE);
+  tft.fillTriangle(135,124,150,139,135,139,WHITE);
+  tft.fillTriangle(64,127,53,102,71,120,WHITE);
+  tft.fillTriangle(46,109,53,102,64,127,WHITE);
+  tft.fillTriangle(39,116,39,95,60,95,WHITE);
+  tft.fillRect(78,88,11,26,WHITE);
+  tft.fillTriangle(67,88,82,88,82,73,WHITE);
+  tft.fillTriangle(83,73,83,88,98,88,WHITE);
+  tft.fillTriangle(96,121,121,110,103,128,WHITE);
+  tft.fillTriangle(96,121,121,110,114,103,WHITE);
+  tft.fillTriangle(107,96,128,96,128,117,WHITE);
+  tft.fillCircle(185,140,15,WHITE);
+  tft.fillCircle(235,140,15,WHITE);
+  tft.fillCircle(285,140,15,WHITE);
+  tft.fillCircle(84,140,15,WHITE);
+
   drawDL();
   drawD();
   drawDR();
