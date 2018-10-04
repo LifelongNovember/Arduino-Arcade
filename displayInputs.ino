@@ -33,6 +33,8 @@
 // Rotation
 #define PORTRAIT 0
 #define LANDSCAPE 1
+// Intervalle de temps entre chaque affichage
+#define TIME 300
 
 
 // Use hardware SPI (on Uno, #13, #12, #11) and the above for CS/DC
@@ -72,72 +74,72 @@ void setup() {
   // Test de chacune des positions du stick et des boutons
   registerInput(STICK,UP);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,UPRIGHT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,RIGHT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,DOWNRIGHT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,DOWN);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,DOWNLEFT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,LEFT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(STICK,UPLEFT);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(REDB,1);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(GREENB,1);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
   registerInput(BLACKB,1);
   fillInputs();
-  delay(1500);
+  delay(TIME);
   resetInputs();
   resetDisplay();
 
@@ -155,7 +157,7 @@ void loop() {
   // Dessin des inputs choisis
   fillInputs();
   // Affichage de 1,5 sec
-  delay(1500);
+  delay(TIME);
   // Reinitialisation d'inputPressed
   resetInputs();
   // Reinitialisation de l'affichage
